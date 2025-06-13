@@ -8,12 +8,16 @@
 
 # Этап 1. Сбор данных
 
-DAG: ```/part1_airflow/dags/flats_pipeline.py```
-Шаги пайплайна: ```/part1_airflow/plugins/steps/flats_pipeline_steps.py```
-Telegram плагин: ```/part1_airflow/plugins/steps/messages.py```
+- DAG: ```/part1_airflow/dags/flats_pipeline.py```
+- Шаги пайплайна: ```/part1_airflow/plugins/steps/flats_pipeline_steps.py```
+- Telegram плагин: ```/part1_airflow/plugins/steps/messages.py```
 
 # Запуск Airflow
 ## Запустить контейнер
+```bash 
 docker compose up --build
+```
 ## Остановить
+```bash 
 docker compose down --volumes --remove-orphans
+```
