@@ -3,7 +3,7 @@ import pandas as pd
 # Удаление выбросов
 def remove_outliers(data, threshold=1.5):
     num_cols = data.select_dtypes(include=['float', 'int']).columns
-    num_cols = [col for col in num_cols if col not in ['latitude', 'longitude', 'price', 'id', 'building_type_int']]
+    num_cols = [col for col in num_cols if col not in ['latitude', 'longitude', 'id', 'building_type_int']]
     outlier_flags = pd.DataFrame(False, index=data.index, columns=num_cols)
 
     for col in num_cols:
