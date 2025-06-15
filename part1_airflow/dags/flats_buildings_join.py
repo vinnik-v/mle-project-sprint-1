@@ -2,7 +2,7 @@ from airflow import DAG
 from airflow.operators.python import PythonOperator
 from datetime import datetime, timedelta
 
-from steps.flats_pipeline_steps import create_table, extract, load
+from steps.flats_buildings_join_steps import create_table, extract, load
 from steps.messages import send_telegram_success_message, send_telegram_failure_message
 
 default_args = {
@@ -11,7 +11,7 @@ default_args = {
 }
 
 with DAG(
-    dag_id='flats_pipeline',
+    dag_id='flats_buildings_join',
     description='Pipeline для объединения данных из flats и buildings в одну таблицу',
     start_date=datetime(2025, 6, 1),
     schedule_interval='@once',

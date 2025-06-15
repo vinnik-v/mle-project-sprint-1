@@ -8,9 +8,17 @@
 
 # Этап 1. Сбор данных
 
-- DAG: ```/part1_airflow/dags/flats_pipeline.py```
-- Шаги пайплайна: ```/part1_airflow/plugins/steps/flats_pipeline_steps.py```
+- DAG: ```/part1_airflow/dags/flats_buildings_join.py```
+- Шаги пайплайна: ```/part1_airflow/plugins/steps/flats_buildings_join_steps.py```
 - Telegram плагин: ```/part1_airflow/plugins/steps/messages.py```
+- в БД создана таблица ```flats_buildings```
+
+# Этап 2. Очистка данных
+
+- DAG: ```/part1_airflow/dags/flats_buildings_clean.py```
+- Шаги пайплайна: ```/part1_airflow/plugins/steps/flats_buildings_clean_steps.py```
+- Telegram плагин: ```/part1_airflow/plugins/steps/messages.py```
+- в БД создана таблица ```flats_buildings_clean```
 
 # Запуск Airflow
 ## Запустить контейнер
