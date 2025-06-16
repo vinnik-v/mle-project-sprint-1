@@ -1,0 +1,12 @@
+index_col: 'id'
+target_col: 'price'
+one_hot_drop: 'if_binary'
+scaler: 'StandardScaler'
+test_size: 0.2
+random_state: 42
+stratify_bins: 10   
+model_type: 'CatBoostRegressor'
+catboost_verbose: 100
+n_splits: 5
+metrics: ['mae', 'rmse', 'r2']
+n_jobs: -1
