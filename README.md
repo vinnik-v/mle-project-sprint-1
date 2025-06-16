@@ -36,3 +36,9 @@ docker compose up --build
 ```bash 
 docker compose down --volumes --remove-orphans
 ```
+# Запуск обучения модели
+1. Перейти в папку ```/part2_dvc```
+2. выполнить команду 
+```bash 
+dvc repro
+```
