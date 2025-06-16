@@ -20,6 +20,13 @@
 - Telegram плагин: ```/part1_airflow/plugins/steps/messages.py```
 - в БД создана таблица ```flats_buildings_clean```
 
+# Этап 3. Создание DVC-пайплайна обучения модели
+- dvc.yaml - ```/part2_dvc/dvc.yaml```
+- params.yaml - ```/part2_dvc/params.yaml```
+- Выгрузка данных - ```/part2_dvc/scripts/data.py```
+- Обучение модели - ```/part2_dvc/scripts/fit.py```
+- Оценка модели - ```/part2_dvc/scripts/evaluate.py```
+
 # Запуск Airflow
 ## Запустить контейнер
 ```bash 
