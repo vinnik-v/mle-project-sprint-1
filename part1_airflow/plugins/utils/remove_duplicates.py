@@ -1,14 +1,13 @@
 # удаление дубликатов
 def remove_duplicates(data):
-    # Удаляем дубликаты по признакам (кроме id)
-    feature_cols = data.columns.drop('id').tolist()
-    is_duplicated_features = data.duplicated(subset=feature_cols, keep=False)
+    """
+    Удаляет полные дубликаты по признакам (кроме id) и дубликаты id, оставляя последнюю строку.
+    """
+    # Удалим дубликаты по признакам, игнорируя id
+    feature_cols = [col for col in data.columns if col != 'id']
+    data = data.drop_duplicates(subset=feature_cols, keep='last')
 
-    # Удаляем все строки с повторяющимися id
-    duplicated_ids = data['id'][data['id'].duplicated(keep=False)]
+    # Удалим дубликаты по id, оставляя последнюю строку
+    data = data.drop_duplicates(subset='id', keep='last')
 
-    # Объединяем условия на удаление
-    to_drop = is_duplicated_features | data['id'].isin(duplicated_ids)
-
-    data = data[~to_drop].reset_index(drop=True)
-    return data
+    return data.reset_index(drop=True)
